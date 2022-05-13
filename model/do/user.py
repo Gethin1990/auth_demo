@@ -1,6 +1,8 @@
-import string
 
-from model.role import Role
+import string
+from typing import List
+
+from model.do.role import Role
 
 
 class User(object):
@@ -11,4 +13,4 @@ class User(object):
     lastname:string
     email:string
     hashed_password:string
-    roles: list[Role]
+    roles: List[Role]
