@@ -3,7 +3,7 @@
 This Demo is use fastapi to build the solution of authoritarian and authenticate.
 This Demo is build by VS Code. The project is build form 0 to 1 for python exercise.
 
-## How to run the code
+## How to build and debug the code
 
 The code build steps:
 
@@ -21,6 +21,12 @@ pip install python-multipart
 ```
 
 - download the code
+
+- click the debug icon and select 'fastapi'
+
+- open the url as below, and it will show the Open API document
+
+<http://127.0.0.1:8000/docs>
 
 ## TODO LIST
 
