@@ -1,6 +1,6 @@
-from fastapi.testclient import TestClient
-import os,sys                                     
-sys.path.append(os.getcwd()) 
+# from fastapi.testclient import TestClient
+# import os,sys                                     
+# sys.path.append(os.getcwd()) 
 
-def create_user_test():
+def func_create_user_test():
     print('start')
