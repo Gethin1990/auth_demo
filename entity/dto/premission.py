@@ -2,7 +2,7 @@ from typing import List
 
 from pydantic import BaseModel
 
-from model.dto.role import Role
+from entity.dto.role import Role
 
 class PermissionBase(BaseModel):
     name: str
