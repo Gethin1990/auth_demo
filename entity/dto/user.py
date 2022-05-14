@@ -10,6 +10,6 @@ class UserCreate(UserBase):
     password: str
 
 
-class UserResponse(UserBase):
+class UserOut(UserBase):
     id: int
     is_active: bool

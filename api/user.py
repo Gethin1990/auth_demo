@@ -6,7 +6,7 @@ from entity.do.user import User
 from infrastructure.operation.auth import get_password_hash, get_current_user
 
 from infrastructure.operation.user import user_op
-from entity.dto.user import UserResponse,UserCreate
+from entity.dto.user import UserOut,UserCreate
 from infrastructure.status_code.status_code_enum import StatusCodeEnum
 router = APIRouter(prefix="/user", tags=["User"])
 

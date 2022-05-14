@@ -4,24 +4,26 @@
 
 ### Infrastructure
 
-[] Find API Framework
-[] Build UT
-[] Build Model
-[] Build Storage
-[] Readme.md
+- [x] Find API Framework
+- [x] Build UT
+- [x] Build Model
+- [x] Build Storage
+- [x] Readme.md
 
 ### Functions
 
-[x] Create User
-[x] Delete User
-[] Create Role
-[] Delete Role
-[] Add Role to User
-[] Authenticate
-[] Invalidate
-[] Check Role
-[] All Roles
+- [x] Create User
+- [x] Delete User
+- [x] Create Role
+- [x] Delete Role
+- [x] Add Role to User
+- [x] Authenticate
+- [x] Invalidate
+- [x] Check Role
+- [x] All Roles
 
+pip install fastapi-jwt-auth
+pip install pydantic[email]
 pip install python-jose
 pip install passlib
 pip install bcrypt

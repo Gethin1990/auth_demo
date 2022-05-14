@@ -2,18 +2,22 @@ from pydantic import BaseModel
 
 
 class RoleBase(BaseModel):
-    name: str
+    pass
+
 
 class RoleCreate(RoleBase):
+    name: str
     pass
 class RoleCheck(RoleBase):
+    name: str
     pass
 
 
 class RoleUpdate(RoleBase):
-    user_id:str
-    role_id:str
+    user_id:int
+    role_id:int
 
 
-class RoleResponse(RoleBase):
+class RoleOut(RoleBase):
+    name: str
     id: int

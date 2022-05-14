@@ -7,7 +7,7 @@ from jose import jwt, JWTError
 
 from infrastructure.operation.auth import authenticate_user,create_access_token
 from entity.dto.token import Token,TokenData
-from entity.dto.user import UserResponse
+from entity.dto.user import UserOut
 from settings import Settings,get_settings
 
 router = APIRouter(

@@ -11,7 +11,7 @@ from infrastructure.operation.user import user_op
 from entity.do.user import User as UserModel
 
 from entity.dto.token import TokenData
-from entity.dto.user import UserResponse
+from entity.dto.user import UserOut
 
 from settings import get_settings
 
@@ -70,7 +70,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     return user
 
 
-async def get_current_active_user(current_user: UserResponse = Depends(get_current_user)):
+async def get_current_active_user(current_user: UserOut = Depends(get_current_user)):
     if not current_user.is_active:
         raise HTTPException(status_code=400, detail="user is deactivated")
     return current_user
