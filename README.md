@@ -28,6 +28,8 @@ pip install python-multipart
 
 <http://127.0.0.1:8000/docs>
 
+## Technology Points
+
 ## TODO LIST
 
 ### Infrastructure
@@ -55,5 +57,3 @@ pip install python-multipart
 
 - [] Docker and K8S
 - [] RBAC
-
-
