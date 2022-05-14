@@ -30,6 +30,8 @@ pip install python-multipart
 
 ## Technology Points
 
+user password encryption by 'bcrypt'.
+
 ## TODO LIST
 
 ### Infrastructure
