@@ -46,8 +46,9 @@ async def delete_role(id_role: int):
 
     if role:
         relationship = role_user_op.get_role_by_userid(id_role,0)
-        for item in relationship:
-            role_user_op.delete(item.id)
+        if relationship:
+            for item in relationship:
+                role_user_op.delete(item.id)
         res = role_op.delete(id_role)
         return res.id
     else:

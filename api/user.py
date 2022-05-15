@@ -51,6 +51,7 @@ async def delete_user(
 
     
     relationship = role_user_op.get_role_by_userid(0,user_id)
-    for item in relationship:
-        role_user_op.delete(item.id)
+    if relationship:
+        for item in relationship:
+            role_user_op.delete(item.id)
     user_op.delete(user_id)
