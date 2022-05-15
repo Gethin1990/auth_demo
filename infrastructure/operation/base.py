@@ -84,6 +84,8 @@ class Base(Generic[ModelType]):
         res = None
         if rid == 0:
             res = list(filter(lambda x: x.user_id == uid, tb))
+        elif uid == 0:
+            res = list(filter(lambda x: x.role_id == rid, tb))
         else:
             res = list(filter(lambda x: x.role_id ==
                        rid and x.user_id == uid, tb))

@@ -31,6 +31,7 @@ pip install python-multipart
 ## Technology Points
 
 user password encryption by 'bcrypt'.
+As the AC remind ,the token could only use for 1 time, you should renew token pre-request
 
 ## TODO LIST
 
@@ -41,7 +42,7 @@ user password encryption by 'bcrypt'.
 - [x] Build Model
 - [x] Build Storage
 - [x] Readme.md
-- [] UT for function
+- [ ] UT for function
 
 ### Functions
 
@@ -57,5 +58,5 @@ user password encryption by 'bcrypt'.
 
 ### Functions in the further
 
-- [] Docker and K8S
-- [] RBAC
+- [ ] Docker and K8S
+- [ ] RBAC

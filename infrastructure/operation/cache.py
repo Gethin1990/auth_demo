@@ -102,7 +102,7 @@ class DataCache(object):
         }
 
     def _clean_cache(self, cache_id):
-        if self.__cache.has_key(cache_id):
+        if cache_id in self.__cache:
             timer = self.__cache[cache_id]['timer']
             timer.cancel()
             self.__cache.pop(cache_id)

@@ -45,6 +45,9 @@ async def delete_role(id_role: int):
     role = role_op.get(id=id_role)
 
     if role:
+        relationship = role_user_op.get_role_by_userid(id_role,0)
+        for item in relationship:
+            role_user_op.delete(item.id)
         res = role_op.delete(id_role)
         return res.id
     else:
@@ -91,9 +94,4 @@ async def get_roles(current_user: User = Depends(get_current_user)):
         for role in role_op.get_all():
             if ro.id == role.id:
                 res.append({"id":role.id,"name":role.name})
-    return res
-
-@router.get("/test", response_model=List[RoleOut], status_code=200)
-async def get_roles():
-    res = [{"id":0,"name":'n'}]
     return res

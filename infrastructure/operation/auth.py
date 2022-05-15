@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from functools import cache
 from typing import Optional
 
 from fastapi import Depends, HTTPException
@@ -14,6 +15,8 @@ from entity.dto.token import TokenData
 from entity.dto.user import UserOut
 
 from settings import get_settings
+
+from infrastructure.operation.cache import DataCache
 
 
 
@@ -57,6 +60,10 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
         headers={"WWW-Authenticate": "Bearer"},
     )
     try:
+        cache = DataCache()
+        if token in cache.values().values():
+            raise credentials_exception
+        cache.set(token) 
         payload = jwt.decode(token, get_settings().token_generator_secret_key, algorithms=["HS256"])
         username: str = payload.get("sub")
         if username is None:
