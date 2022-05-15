@@ -34,6 +34,10 @@ quick start the service
 
 `uvicorn main:app --reload`
 
+## The Test Screenshot
+
+The Test Screenshot in the folder 'api_test_screenshot'
+
 ## Technology Points
 
 1. User password encryption by 'bcrypt'.

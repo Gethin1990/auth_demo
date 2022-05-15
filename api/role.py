@@ -75,11 +75,12 @@ async def add_role_to_user(role_request: RoleUpdate):
 @router.post("/check_role/", response_model=bool, status_code=200)
 async def check_role(role_request: RoleCheck, current_user: User = Depends(get_current_user)):
     role = role_op.get_by_rolename(role_name=role_request.name)
+    if not role: return False
     exist_role = role_user_op.get_role_by_userid(role.id, current_user.id)
     if isinstance(exist_role, StatusCodeEnum):
         return False
 
-    if len(exist_role) > 0:
+    if exist_role and len(exist_role) > 0:
         return True
     else:
         return False
