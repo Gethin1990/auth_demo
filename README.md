@@ -28,10 +28,21 @@ pip install python-multipart
 
 <http://127.0.0.1:8000/docs>
 
+or
+
+quick start the service
+
+`uvicorn main:app --reload`
+
 ## Technology Points
 
-user password encryption by 'bcrypt'.
-As the AC remind ,the token could only use for 1 time, you should renew token pre-request
+1. User password encryption by 'bcrypt'.
+2. As the AC remind ,the token could only use for 1 time, you should renew token pre-request
+3. Cache
+4. Storage
+5. FastAPI
+6. Status Code
+7. OAuth and JWT
 
 ## TODO LIST
 

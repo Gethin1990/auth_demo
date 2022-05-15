@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     environment: Environment = "development"
     token_generator_secret_key: str = secrets.token_hex(64)
     access_token_expire_minutes: int = 120
-    refresh_token_expire_minutes: int = 20
+    refresh_token_expire_minutes: int = 120
     api_disable_docs: bool = False
     api_debug: bool = True
 
