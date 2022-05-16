@@ -1,4 +1,4 @@
-from infrastructure.operation.storage import Storage
+from infrastructure.storage.storage import Storage
 from infrastructure.status_code.status_code_enum import StatusCodeEnum
 
 def test_storage_no_table_find():

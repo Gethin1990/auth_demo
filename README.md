@@ -1,7 +1,7 @@
 # Auth Demo For Python
 
 This Demo is use fastapi to build the solution of authoritarian and authenticate.
-This Demo is build by VS Code. The project is build form 0 to 1 for python exercise.
+This Demo is build by VS Code. The project is build form 0 to 1 for python exercise. The Demo is only for interview building, Base I have not builded API by python, it is the fist time for me to build the demo, it is simple and still have many improvements.
 
 ## How to build and debug the code
 
@@ -18,6 +18,7 @@ pip install python-jose
 pip install passlib
 pip install bcrypt
 pip install python-multipart
+pip install pytest
 ```
 
 - download the code
@@ -37,6 +38,55 @@ quick start the service
 ## The Test Screenshot
 
 The Test Screenshot in the folder 'api_test_screenshot'
+
+## Code framework document
+
+The code include 4 layers as below.
+
+### API
+
+api: API layer is used to provide the service for client.
+
+api provide the function as below:
+
+auth: get token, and renew token.
+
+user: crate user, delete user.
+
+role: add role, delete role, add use role, get role,check role.
+
+### entity
+
+entity: Entity layer include dto and do model. DTO is date transfer object,it is used for API transfer model include request and response. DO is domain object, it is defined for the domain model.
+
+### infrastructure
+
+infrastructure: Infrastructure layer will provide the based infrastructure capacity for the whole solution, like Cache, Storage,Operation, Internal Status Code.
+
+This layer include 3 parts: Operation, Storage and Status Code.
+
+Storage use singleton patten for saving the data in to memory.And think about the function for integration SQL or No-SQL in the future, I design it as table name-id-value patten to save the date. And the Cache is designed 2 hours expired for save the token as black list to make sure the token could used only once.
+
+Operation is used for operate the data, they inherit by based operate and easy to use with strategy and factory patten.
+
+Status Code is used for mark the operate status.
+
+### Settings
+
+The setting config as below.
+
+```text
+environment: Environment = "development"
+token_generator_secret_key: str = secrets.token_hex(64)
+access_token_expire_minutes: int = 120
+refresh_token_expire_minutes: int = 120
+api_disable_docs: bool = False
+api_debug: bool = True
+```
+
+### Test
+
+test: Test layer is for unit test. We use pytest framework for UT. The unit test include Function Test, Unit Test, Storage Test parts.
 
 ## Technology Points
 

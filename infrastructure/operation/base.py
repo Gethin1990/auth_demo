@@ -5,7 +5,7 @@ import string
 from tkinter.tix import Tree
 from typing import Any, Dict, Generic, List, Optional, Type, TypeVar, Union
 
-from infrastructure.operation.storage import Storage
+from infrastructure.storage.storage import Storage
 from entity.do.base import Base_DO
 from infrastructure.status_code.status_code_enum import StatusCodeEnum
 ModelType = TypeVar("ModelType")
